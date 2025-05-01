@@ -1,0 +1,34 @@
+from zipfile import ZipFile
+from io import BytesIO
+
+# HTML कंटेंट
+html_content = '''<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>मेरा पहला SEO और Facebook Open Graph पेज</title>
+
+  <meta name="description" content="यह एक डेमो पेज है जो SEO और Facebook शेयरिंग को दिखाता है।">
+  <meta name="keywords" content="SEO, Google, Meta, Facebook, हिंदी ब्लॉग, डिजिटल मार्केटिंग">
+  <meta name="author" content="आपका नाम">
+
+  <meta property="og:title" content="मेरा पहला SEO और Facebook Open Graph पेज" />
+  <meta property="og:description" content="देखें कैसे आपका कंटेंट गूगल और फेसबुक पर शानदार दिख सकता है।" />
+  <meta property="og:image" content="https://example.com/demo-image.jpg" />
+  <meta property="og:url" content="https://example.com/seo-demo" />
+  <meta property="og:type" content="website" />
+
+</head>
+<body>
+  <h1>नमस्ते! यह मेरा पहला SEO और Facebook Ready पेज है</h1>
+  <p>यह पेज दिखाता है कि आप कैसे अपने कंटेंट को गूगल और फेसबुक पर बेहतर बना सकते हैं।</p>
+  <img src="https://example.com/demo-image.jpg" alt="SEO डेमो इमेज">
+</body>
+</html>'''
+
+# index.html नाम की ज़िप फाइल बनाएँ
+with ZipFile("seo_facebook_demo.zip", "w") as zip_file:
+    zip_file.writestr("index.html", html_content)
+
+print("Zip फाइल 'seo_facebook_demo.zip' बन गई है।")
